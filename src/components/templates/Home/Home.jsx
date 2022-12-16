@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <Card>
         <InputField
-          placeholder="Ente nae"
+          placeholder="Enter Gross Salary"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
