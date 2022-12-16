@@ -1,17 +1,13 @@
-import { styled, Button as MuiButton } from "@mui/material";
-import Colors from "../../../theme/Colors";
+import { Button as MuiButton, styled } from "@mui/material";
 
 const StyledButton = styled(MuiButton)`
-  color: ${Colors.navyBlue};
-  border: 2px solid ${Colors.navyBlue};
-  :hover {
-    border: 2px solid ${Colors.navyBlue};
-  }
+  margin-top: 20px;
   border-radius: 20px;
+  text-transform: capitalize;
 `;
 
 const Button = ({ text, ...props }) => (
-  <StyledButton variant="outlined" fullWidth {...props}>
+  <StyledButton variant="contained" fullWidth {...props}>
     {text}
   </StyledButton>
 );
