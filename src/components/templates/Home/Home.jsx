@@ -13,7 +13,7 @@ const Home = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <InputField placeholder="Enter Rol No " />
+        <InputField placeholder="Enter HRA " />
         <Button text={"Submit"} onClick={() => alert("Done ")} />
       </ParentCard>
     </div>
