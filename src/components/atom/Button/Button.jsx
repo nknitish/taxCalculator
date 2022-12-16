@@ -12,4 +12,16 @@ const Button = ({ text, ...props }) => (
   </StyledButton>
 );
 
-export { Button };
+//---
+
+const StyledButtonContainer = styled("div")`
+  width: 100%;
+  background-color: red;
+  bottom: 10px;
+`;
+
+const ButtonContainer = (props) => (
+  <StyledButtonContainer> {props.children}</StyledButtonContainer>
+);
+
+export { Button, ButtonContainer };
