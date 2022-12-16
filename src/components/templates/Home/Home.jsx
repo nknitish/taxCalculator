@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { Button } from "../../atom/Button/Button";
-import { Card } from "../../atom/Card/Card";
+import { Card, ParentCard } from "../../atom/Card/Card";
 import { InputField } from "../../atom/InputField/InputField";
 
 const Home = () => {
   const [name, setName] = useState(108);
   return (
     <div>
-      <Card>
+      <ParentCard>
         <InputField
           placeholder="Enter Gross Salary"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <InputField placeholder="Enter Rol No " />
+        <InputField placeholder="Enter HRA " />
         <Button text={"Submit"} onClick={() => alert("Done ")} />
-      </Card>
+      </ParentCard>
     </div>
   );
 };
