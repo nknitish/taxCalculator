@@ -1,6 +1,7 @@
-import Home from "./components/templates/Home";
+import { Layout } from "./components/atom/Layout/Layout";
+import Home from "./components/organisms/Home/Home";
 function App() {
-  return <Home />;
+  return <Layout>{<Home />}</Layout>;
 }
 
 export default App;
