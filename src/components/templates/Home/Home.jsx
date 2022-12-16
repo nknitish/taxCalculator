@@ -14,7 +14,7 @@ const Home = () => {
           onChange={(e) => setName(e.target.value)}
         />
         <InputField placeholder="Enter Rol No " />
-        <Button text={"Hello"} onClick={() => alert("Hellow ")} />
+        <Button text={"Submit"} onClick={() => alert("Done ")} />
       </Card>
     </div>
   );
