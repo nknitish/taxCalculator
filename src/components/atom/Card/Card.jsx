@@ -7,13 +7,11 @@ import {
 } from "@mui/material";
 
 const StyledCard = styled(MuiCard)`
-  margin: 20px;
   border-radius: 20px;
 `;
 
 const ParentStyledCard = styled(MuiCard)`
   border-radius: 40px 40px 0 0;
-  margin: 20px;
   height: 80vh;
   margin-top: 20vh;
 `;
