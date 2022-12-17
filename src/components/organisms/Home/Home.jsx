@@ -1,10 +1,11 @@
+import Income from "../../molecules/Income";
 import Welcome from "../../molecules/Welcome";
 
 const Home = () => {
   return (
     <div>
       <Welcome />
-      <Welcome />
+      <Income />
     </div>
   );
 };
