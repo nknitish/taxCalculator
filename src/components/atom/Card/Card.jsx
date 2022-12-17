@@ -13,6 +13,7 @@ const Card = styled(({ title, subheader, ...props }) => (
   </MuiCard>
 ))`
   border-radius: 20px;
+  margin-top: ${(props) => props.marginTop};
 `;
 
 const ParentCard = styled(Card)`

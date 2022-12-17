@@ -1,14 +1,30 @@
 import FolderIcon from "@mui/icons-material/Folder";
 
 export const taxCalculatorSteps = [
-  { text: "Fill Your Income", icon: <FolderIcon /> },
-  { text: "Fill Your Income", icon: <FolderIcon /> },
-  { text: "Fill Your Income", icon: <FolderIcon /> },
+  { label: "Fill Your Income", icon: <FolderIcon /> },
+  { label: "Fill Your Income", icon: <FolderIcon /> },
+  { label: "Fill Your Income", icon: <FolderIcon /> },
 ];
 
 export const incomeList = [
-  { placeHolder: "Fill Your Basic", name: "basic" },
-  { placeHolder: "Fill Your PF", name: "pf" },
-  { placeHolder: "Fill Your Special allowance", name: "spAllowance" },
-  { placeHolder: "Other", name: "other" },
+  {
+    label: "Enter Basic Salary",
+    name: "basic",
+  },
+  { label: "Enter HRA", name: "hra" },
+  {
+    label: "Enter Special allowance",
+    name: "spAllowance",
+  },
+  {
+    label: "Enter Other Income",
+    name: "other",
+  },
+];
+
+export const investmentList = [
+  { label: "Enter PP", name: "pf" },
+  { label: "Enter ELSS ", name: "elss" },
+  { label: "Enter PPF", name: "ppf" },
+  { label: "Other investment", name: "other" },
 ];
