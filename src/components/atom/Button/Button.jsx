@@ -6,6 +6,7 @@ const Button = styled((props) => (
   margin-top: 20px;
   border-radius: 20px;
   text-transform: capitalize;
+  flex: ${(props) => (props?.childOfDoubleButton ? "0.4" : "1")};
 `;
 
 export { Button };

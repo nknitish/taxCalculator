@@ -7,7 +7,8 @@ export const taxCalculatorSteps = [
 ];
 
 export const incomeList = [
-  { text: "Fill Your Basic", name: "basic" },
-  { text: "Fill Your PF", name: "pf" },
-  { text: "Fill Your Special allowance", name: "spAllowance" },
+  { placeHolder: "Fill Your Basic", name: "basic" },
+  { placeHolder: "Fill Your PF", name: "pf" },
+  { placeHolder: "Fill Your Special allowance", name: "spAllowance" },
+  { placeHolder: "Other", name: "other" },
 ];

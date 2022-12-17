@@ -4,7 +4,7 @@ import { Text } from "../../atom/Text/Text";
 import { List } from "../../atom/List/List";
 import { taxCalculatorSteps } from "../../../constant/constant";
 
-const Welcome = () => {
+const Welcome = ({ handleClick }) => {
   return (
     <ParentCard
       title={<Text text={"Tax Calculator"} variant="h2" align="center" />}
@@ -16,7 +16,7 @@ const Welcome = () => {
         align="left"
       />
       <List data={taxCalculatorSteps} />
-      <Button text={"Let's go"} />
+      <Button text={"Let's go"} onClick={handleClick} />
     </ParentCard>
   );
 };
