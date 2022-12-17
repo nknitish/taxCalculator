@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { incomeList } from "../../../constant/constant";
 import { getSum } from "../../../functions/taxFunction";
@@ -17,13 +17,17 @@ const Income = ({ id }) => {
   const handleInputChange = (e) => {
     const { value, name } = e.target;
 
-    const data = {
-      ...income,
-      [name]: value ? Number(value) : null,
-    };
-    setSum(getSum(data));
-    dispatch(setIncome(data));
+    dispatch(
+      setIncome({
+        ...income,
+        [name]: value ? Number(value) : null,
+      })
+    );
   };
+
+  useEffect(() => {
+    setSum(getSum(income));
+  }, [income]);
 
   return (
     <ParentCard
@@ -56,6 +60,7 @@ const Income = ({ id }) => {
             variant="outlined"
             childOfDoubleButton
             color="error"
+            onClick={() => dispatch(setIncome({}))}
           />
         )}
         <Button
