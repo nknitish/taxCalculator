@@ -1,13 +1,17 @@
 import { OutlinedInput, styled } from "@mui/material";
+import Colors from "./../../../theme/Colors";
 
 const StyleInputField = styled(OutlinedInput)`
-  margin-top: 20px;
   height: 30px;
   border-radius: 20px;
+  margin-top: ${(props) => props.marginTop};
+  background-color: ${(props) => props?.readOnly && Colors.lightGreish};
 `;
 
-const InputField = (props) => {
+export const InputField = (props) => {
   return <StyleInputField fullWidth type="number" {...props} />;
 };
 
-export { InputField };
+export const InputContainer = styled("div")`
+  padding: 20px;
+`;
