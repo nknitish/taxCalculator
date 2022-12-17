@@ -77,3 +77,14 @@ const calculateTax = () => {
 
   return "Thanks for using me";
 };
+
+//Calculate Sum of values from object
+
+export const getSum = (data = {}) => {
+  let sum = 0;
+  Object.entries(data).map(([key, value]) => {
+    sum += value;
+  });
+
+  return sum;
+};
