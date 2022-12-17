@@ -1,13 +1,11 @@
 import { OutlinedInput, styled } from "@mui/material";
 
-const StyledTextFiled = styled(OutlinedInput)`
+const InputField = styled((props) => (
+  <OutlinedInput fullWidth type="number" {...props} />
+))`
   margin-top: 20px;
   height: 30px;
   border-radius: 20px;
 `;
-
-const InputField = (props) => (
-  <StyledTextFiled fullWidth type="number" {...props} />
-);
 
 export { InputField };

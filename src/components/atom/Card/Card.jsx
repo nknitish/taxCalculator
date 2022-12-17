@@ -1,37 +1,24 @@
-import React from "react";
 import {
   Card as MuiCard,
   CardContent,
   CardHeader,
   styled,
 } from "@mui/material";
+import React from "react";
 
-const StyledCard = styled(MuiCard)`
+const Card = styled(({ title, subheader, ...props }) => (
+  <MuiCard {...props} raised>
+    {title && <CardHeader title={title} subheader={subheader} />}
+    <CardContent children={props?.children} />
+  </MuiCard>
+))`
   border-radius: 20px;
 `;
 
-const ParentStyledCard = styled(MuiCard)`
+const ParentCard = styled(Card)`
   border-radius: 40px 40px 0 0;
   height: 80vh;
   margin-top: 20vh;
 `;
-
-const Card = (props) => (
-  <StyledCard {...props} raised>
-    <CardContent children={props?.children} />
-  </StyledCard>
-);
-
-const ParentCard = (props) => (
-  <ParentStyledCard {...props} raised>
-    {/* <CardHeader
-      title="Hello"
-      subheader="World"
-      // disableTypography
-      // style={{ backgroundColor: "red" }}
-    /> */}
-    <CardContent children={props?.children} />
-  </ParentStyledCard>
-);
 
 export { Card, ParentCard };
