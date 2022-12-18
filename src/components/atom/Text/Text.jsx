@@ -5,4 +5,14 @@ const Text = styled((props) => (
   margin-top: ${(props) => props.marginTop};
 `;
 
-export { Text };
+const FooterText = (props) => (
+  <Text
+    children={props?.text}
+    align="right"
+    display="block"
+    variant="button"
+    {...props}
+  />
+);
+
+export { FooterText, Text };

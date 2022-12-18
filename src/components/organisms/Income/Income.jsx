@@ -7,7 +7,7 @@ import { Button } from "../../atom/Button/Button";
 import { ParentCard } from "../../atom/Card/Card";
 import InputCard from "../../atom/InputCard/InputCard";
 import { InputContainer } from "../../atom/InputField/InputField";
-import { Text } from "../../atom/Text/Text";
+import { FooterText } from "../../atom/Text/Text";
 import { DoubleButtonContainer } from "./Income.style";
 
 const Income = ({ id, handleClick }) => {
@@ -32,12 +32,15 @@ const Income = ({ id, handleClick }) => {
 
   return (
     <ParentCard
+      marginTop={"15vh"}
       id={id}
-      title={<Text text={"Fill your Income"} variant="h2" align="center" />}
+      title={"Fill your Income"}
+      subheader={"Salary + Other Income"}
     >
       <InputContainer>
-        {incomeList?.map(({ label, name }) => (
+        {incomeList?.map(({ label, name }, index) => (
           <InputCard
+            isFirst={index === 0}
             key={name}
             label={label}
             value={income[name]}
@@ -46,28 +49,23 @@ const Income = ({ id, handleClick }) => {
           />
         ))}
 
-        <Text
-          marginTop={"20px"}
-          text={`GROSS INCOME :  ${sum}`}
-          align="right"
-          variant="h6"
-        />
+        <FooterText marginTop={"10px"} text={`GROSS INCOME :  ${sum}`} />
       </InputContainer>
 
       <DoubleButtonContainer>
-        {sum > 0 && (
-          <Button
-            text={"Reset/Clear"}
-            variant="outlined"
-            childOfDoubleButton
-            color="error"
-            onClick={() => dispatch(setIncome({}))}
-          />
-        )}
         <Button
-          text={"Go to Next Step"}
+          text={"Reset/Clear"}
+          variant="outlined"
+          childOfDoubleButton
+          color="error"
+          disabled={!sum}
+          onClick={() => dispatch(setIncome({}))}
+        />
+        <Button
+          text={"Proceed"}
+          disabled={!sum}
           onClick={handleClick}
-          childOfDoubleButton={sum > 0 ? true : false}
+          childOfDoubleButton
         />
       </DoubleButtonContainer>
     </ParentCard>
