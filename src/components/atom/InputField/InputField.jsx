@@ -13,5 +13,5 @@ export const InputField = (props) => {
 };
 
 export const InputContainer = styled("div")`
-  padding: 20px;
+  padding: 0 20px;
 `;

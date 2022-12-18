@@ -1,7 +1,9 @@
 import { useState } from "react";
-import Deduction from "../../molecules/Deduction";
-import Income from "../../molecules/Income";
+import Deduction from "../../organisms/Deduction";
+import Income from "../../organisms/Income";
 import Welcome from "../../molecules/Welcome";
+import Dashboard from "../../organisms/Dashboard";
+import { useSelector } from "react-redux";
 
 const idList = {
   income: "incomeCard",
@@ -14,7 +16,9 @@ const steps = {
 };
 const Home = () => {
   const [step, setStep] = useState(steps.one);
+  const state = useSelector((state) => state);
 
+  // console.log("State", state);
   const scrollToIncomePage = () => {
     let element = document.getElementById(idList.income);
     element.scrollIntoView({
@@ -28,6 +32,11 @@ const Home = () => {
     window.location.href = `#${idList.income}`;
   };
 
+  const goToDashboard = () => {
+    setStep(steps.three);
+    window.location.href = `#${idList.income}`;
+  };
+
   return (
     <div>
       <div style={{ display: step === steps.one ? "block" : "none" }}>
@@ -36,11 +45,9 @@ const Home = () => {
       </div>
 
       {step === steps.two && (
-        <Deduction
-          handleBack={goToIncomePage}
-          handleClick={() => alert("In Progress")}
-        />
+        <Deduction handleBack={goToIncomePage} handleClick={goToDashboard} />
       )}
+      {step === steps.three && <Dashboard handleBack={goToIncomePage} />}
     </div>
   );
 };

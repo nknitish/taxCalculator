@@ -34,48 +34,21 @@ const newRegime = (amt) => {
   }
 };
 
-const calculateTax = () => {
-  let basePay = prompt("Enter your base Pay");
+export const calculateTax = (amt, isOldRegime = true) => {
+  let tax = 0;
 
-  if (!basePay || isNaN(basePay)) {
-    console.log("Inavalid Input , Please try again");
-    return;
+  if (isOldRegime) {
+    tax = Number(oldRegime(amt).toFixed(0));
+  } else {
+    tax = Number(newRegime(amt).toFixed(0));
   }
 
-  let taxableAmt = prompt(
-    "Enter your net taxable amount (If you don;t know your taxable amount, then enter 0"
-  );
-
-  if (isNaN(taxableAmt)) {
-    console.log("Inavalid Input , Please try again");
-    return;
-  }
-
-  if (taxableAmt == 0 || taxableAmt > basePay) {
-    taxableAmt = basePay;
-  }
-
-  let oldRegimeTax = Number(oldRegime(taxableAmt).toFixed(0));
-  let newRegimeTax = Number(newRegime(basePay).toFixed(0));
-
-  let oldTaxcess = Number((oldRegimeTax * 0.04).toFixed(0));
-  let newTaxcess = Number((newRegimeTax * 0.04).toFixed(0));
-
-  console.clear();
-
-  console.log(`Base Amt : ${basePay} Taxable Amt : ${taxableAmt}`);
-  console.log(
-    `Old Regime : Tax ${oldRegimeTax} + cess ${oldTaxcess} = ${
-      oldRegimeTax + oldTaxcess
-    }`
-  );
-  console.log(
-    `New Regime : Tax ${newRegimeTax} + cess ${newTaxcess} = ${
-      newRegimeTax + newTaxcess
-    }`
-  );
-
-  return "Thanks for using me";
+  return {
+    taxableAmount: amt,
+    tax: tax,
+    cess: Number((tax * 0.04).toFixed(0)),
+    totalTax: tax + Number((tax * 0.04).toFixed(0)),
+  };
 };
 
 //Calculate Sum of values from object

@@ -17,9 +17,8 @@ const Card = styled(({ title, subheader, ...props }) => (
 `;
 
 const ParentCard = styled(Card)`
-  border-radius: 40px 40px 0 0;
-  height: 80vh;
-  margin-top: 20vh;
+  border-radius: 30px 30px 0 0;
+  height: 85vh;
 `;
 
 export { Card, ParentCard };

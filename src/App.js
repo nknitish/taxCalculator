@@ -1,5 +1,5 @@
 import { Layout } from "./components/atom/Layout/Layout";
-import Home from "./components/organisms/Home/Home";
+import Home from "./components/pages/Home";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 

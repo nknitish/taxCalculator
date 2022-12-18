@@ -10,14 +10,14 @@ import { Text } from "../Text/Text";
 const List = ({ data }) => {
   return (
     <MuiList dense={false}>
-      {data?.map(({ label, icon }) => (
+      {data?.map(({ label, secondaryText, icon }) => (
         <ListItem key={label}>
           <ListItemAvatar>
             <Avatar>{icon}</Avatar>
           </ListItemAvatar>
           <ListItemText
-            primary={<Text text={label} variant="h5" />}
-            secondary={false ? "Secondary text" : null}
+            primary={<Text text={label} />}
+            secondary={secondaryText}
           />
         </ListItem>
       ))}
