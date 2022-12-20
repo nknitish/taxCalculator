@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Deduction from "../../organisms/Deduction";
 import Income from "../../organisms/Income";
 import Welcome from "../../molecules/Welcome";
@@ -27,6 +27,12 @@ const Home = () => {
     });
   };
 
+  useEffect(() => {
+    if (window.performance.navigation.type === 1) {
+      setStep(steps.one);
+      window.location.href = `#incomeCard`;
+    }
+  }, []);
   const goToIncomePage = () => {
     setStep(steps.one);
     window.location.href = `#${idList.income}`;
