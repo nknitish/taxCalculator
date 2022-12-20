@@ -10,7 +10,22 @@ const Dashboard = ({ handleBack }) => {
   const [oldRegime, setOldRegime] = useState(true);
   return (
     <Root>
-      <Text text="<- Back" onClick={handleBack} />
+      <Button
+        text="Back"
+        onClick={handleBack}
+        size="small"
+        sx={{
+          flex: "0",
+          width: "20%",
+          color: "grey",
+          bgcolor: " #f5f5f5",
+          marginTop: "20px",
+          "&:hover": {
+            bgcolor: "#eceff1",
+            color: "black ",
+          },
+        }}
+      />
       <DoubleButtonContainer>
         <Button
           text={"Old Regime"}
