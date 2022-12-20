@@ -18,7 +18,7 @@ const Home = () => {
   const [step, setStep] = useState(steps.one);
   const state = useSelector((state) => state);
 
-  // console.log("State", state);
+  console.log("State", state);
   const scrollToIncomePage = () => {
     let element = document.getElementById(idList.income);
     element.scrollIntoView({

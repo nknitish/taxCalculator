@@ -38,9 +38,10 @@ const taxSlice = createSlice({
     setAnnualRent: (state, { payload }) => {
       state.annualRent = payload;
     },
+    setInitialState: () => initialState,
   },
 });
 
-export const { setIncome, setDeduction, setInvestment80C, setAnnualRent } =
+export const { setIncome, setDeduction, setInvestment80C, setAnnualRent, setInitialState } =
   taxSlice.actions;
 export default taxSlice.reducer;

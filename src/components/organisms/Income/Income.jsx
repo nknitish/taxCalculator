@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { incomeList } from "../../../constant/constant";
 import { getSum } from "../../../functions/taxFunction";
-import { setIncome } from "../../../store/reducer";
+import { setIncome, setInitialState } from "../../../store/reducer";
 import { Button } from "../../atom/Button/Button";
 import { ParentCard } from "../../atom/Card/Card";
 import InputCard from "../../atom/InputCard/InputCard";
@@ -30,6 +30,9 @@ const Income = ({ id, handleClick }) => {
     setSum(getSum(income));
   }, [income]);
 
+  const handleReset = () => {
+    dispatch(setInitialState());
+  };
   return (
     <ParentCard
       marginTop={"15vh"}
@@ -59,7 +62,7 @@ const Income = ({ id, handleClick }) => {
           childOfDoubleButton
           color="error"
           disabled={!sum}
-          onClick={() => dispatch(setIncome({}))}
+          onClick={handleReset}
         />
         <Button
           text={"Proceed"}
