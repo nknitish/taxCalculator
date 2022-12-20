@@ -11,14 +11,16 @@ const Dashboard = ({ handleBack }) => {
   return (
     <Root>
       <Button
-        text="Back"
+        text="Go Back"
         onClick={handleBack}
         size="small"
         sx={{
           flex: "0",
-          width: "20%",
+          width: "10%",
           color: "grey",
-          bgcolor: " #f5f5f5",
+
+          background: "transparent",
+          boxShadow: "none",
           marginTop: "20px",
           "&:hover": {
             bgcolor: "#eceff1",
