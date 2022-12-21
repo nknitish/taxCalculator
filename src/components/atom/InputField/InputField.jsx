@@ -9,7 +9,14 @@ const StyleInputField = styled(OutlinedInput)`
 `;
 
 export const InputField = (props) => {
-  return <StyleInputField fullWidth type="number" {...props} />;
+  
+  return (
+    <StyleInputField
+      fullWidth
+      type="number"
+      {...props}
+    />
+  );
 };
 
 export const InputContainer = styled("div")`

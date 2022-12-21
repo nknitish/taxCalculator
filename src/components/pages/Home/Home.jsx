@@ -1,12 +1,13 @@
-import { useState } from "react";
-import Deduction from "../../organisms/Deduction";
-import Income from "../../organisms/Income";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Welcome from "../../molecules/Welcome";
 import Dashboard from "../../organisms/Dashboard";
-import { useSelector } from "react-redux";
+import Deduction from "../../organisms/Deduction";
+import Income from "../../organisms/Income";
 
 const idList = {
   income: "incomeCard",
+  welcome: "welcomeCard",
 };
 
 const steps = {
@@ -26,7 +27,20 @@ const Home = () => {
       block: "end",
     });
   };
+  const scrollToWelcomePage = () => {
+    let element = document.getElementById(idList.welcome);
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
+  useEffect(() => {
+    let uri = window.location.toString();
+    if (uri.indexOf("#") > 0) {
+      scrollToWelcomePage();
+    }
+  }, [window.location]);
   const goToIncomePage = () => {
     setStep(steps.one);
     window.location.href = `#${idList.income}`;
@@ -39,7 +53,11 @@ const Home = () => {
 
   return (
     <div>
-      <div style={{ display: step === steps.one ? "block" : "none" }}>
+      <div
+        style={{
+          display: step === steps.one ? "block" : "none",
+        }}
+      >
         <Welcome handleClick={scrollToIncomePage} />
         <Income id={idList.income} handleClick={() => setStep(steps.two)} />
       </div>

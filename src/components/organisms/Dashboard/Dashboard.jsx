@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import { Button } from "../../atom/Button/Button";
-import { Text } from "../../atom/Text/Text";
+import { Button, SmallButton } from "../../atom/Button/Button";
 import NewRegime from "../../molecules/NewRegime";
 import OldRegime from "../../molecules/OldRegime";
-import { DoubleButtonContainer } from "./Dashboard.style";
-import { Root } from "./Dashboard.style";
+import {
+  BackButtonContainer,
+  DoubleButtonContainer,
+  Root,
+} from "./Dashboard.style";
 
 const Dashboard = ({ handleBack }) => {
   const [oldRegime, setOldRegime] = useState(true);
   return (
     <Root>
-      <Text text="<- Back" onClick={handleBack} />
+      <BackButtonContainer>
+        <SmallButton text="Go Back" onClick={handleBack} />
+      </BackButtonContainer>
       <DoubleButtonContainer>
         <Button
           text={"Old Regime"}

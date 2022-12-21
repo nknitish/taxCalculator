@@ -2,7 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   //All Income
-  income: {},
+  income: {
+    basic: "",
+    hra: "",
+    spAllowance: "",
+    other: "",
+  },
 
   //Deduction + Exemption
   deduction: {
@@ -38,9 +43,15 @@ const taxSlice = createSlice({
     setAnnualRent: (state, { payload }) => {
       state.annualRent = payload;
     },
+    setInitialState: () => initialState,
   },
 });
 
-export const { setIncome, setDeduction, setInvestment80C, setAnnualRent } =
-  taxSlice.actions;
+export const {
+  setIncome,
+  setDeduction,
+  setInvestment80C,
+  setAnnualRent,
+  setInitialState,
+} = taxSlice.actions;
 export default taxSlice.reducer;
