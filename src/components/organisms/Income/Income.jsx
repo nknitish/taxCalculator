@@ -27,7 +27,7 @@ const Income = ({ id, handleClick }) => {
   };
 
   useEffect(() => {
-    setSum(getSum(income));
+    setSum(Number(getSum(income)));
   }, [income]);
 
   const handleReset = () => {

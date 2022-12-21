@@ -1,5 +1,4 @@
 import { OutlinedInput, styled } from "@mui/material";
-import { useState, useEffect } from "react";
 import Colors from "./../../../theme/Colors";
 
 const StyleInputField = styled(OutlinedInput)`
@@ -9,24 +8,13 @@ const StyleInputField = styled(OutlinedInput)`
   background-color: ${(props) => props?.readOnly && Colors.lightGreish};
 `;
 
-export const InputField = ({ value, onChange, ...props }) => {
-  const [inputVal, setInputVal] = useState("");
-  useEffect(() => {
-    if (!value) {
-      setInputVal("");
-    }
-  }, [value]);
-  const handleInputChange = (event) => {
-    setInputVal(event.target.value);
-    onChange(event);
-  };
+export const InputField = (props) => {
+  
   return (
     <StyleInputField
       fullWidth
       type="number"
-      value={inputVal}
       {...props}
-      onChange={handleInputChange}
     />
   );
 };
