@@ -6,7 +6,7 @@ import { store } from "./store/store";
 function App() {
   return (
     <Provider store={store}>
-      <Layout>
+      <Layout id="welcomeCard">
         <Home />
       </Layout>
     </Provider>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Button } from "../../atom/Button/Button";
 import Welcome from "../../molecules/Welcome";
 import Dashboard from "../../organisms/Dashboard";
 import Deduction from "../../organisms/Deduction";
@@ -20,7 +19,7 @@ const Home = () => {
   const [step, setStep] = useState(steps.one);
   const state = useSelector((state) => state);
 
-  console.log("State", state);
+  // console.log("State", state);
   const scrollToIncomePage = () => {
     let element = document.getElementById(idList.income);
     element.scrollIntoView({
@@ -30,24 +29,16 @@ const Home = () => {
   };
   const scrollToWelcomePage = () => {
     let element = document.getElementById(idList.welcome);
-    //console.log("ele=", element);
     element.scrollIntoView({
-      // behavior: "smooth",
+      behavior: "smooth",
       block: "start",
     });
   };
 
-  //console.log("steps=", step);
   useEffect(() => {
-    //console.log("in use effect=");
-    //scrollToWelcomePage();
     let uri = window.location.toString();
     if (uri.indexOf("#") > 0) {
-      //console.log("true");
       scrollToWelcomePage();
-      //var clean_uri = uri.substring(0, uri.indexOf("#"));
-
-      //window.history.replaceState({}, document.title, clean_uri);
     }
   }, [window.location]);
   const goToIncomePage = () => {
@@ -62,8 +53,12 @@ const Home = () => {
 
   return (
     <div>
-      <div style={{ display: step === steps.one ? "block" : "none" }}>
-        <Welcome id={idList.welcome} handleClick={scrollToIncomePage} />
+      <div
+        style={{
+          display: step === steps.one ? "block" : "none",
+        }}
+      >
+        <Welcome handleClick={scrollToIncomePage} />
         <Income id={idList.income} handleClick={() => setStep(steps.two)} />
       </div>
 
