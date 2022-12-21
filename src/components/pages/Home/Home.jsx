@@ -62,7 +62,6 @@ const Home = () => {
         <Income id={idList.income} handleClick={() => setStep(steps.two)} />
       </div>
 
-      {/* <Button text="scroll" onClick={scrollToWelcomePage} /> */}
       {step === steps.two && (
         <Deduction handleBack={goToIncomePage} handleClick={goToDashboard} />
       )}

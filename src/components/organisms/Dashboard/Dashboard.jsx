@@ -13,23 +13,7 @@ const Dashboard = ({ handleBack }) => {
   return (
     <Root>
       <BackButtonContainer>
-        <SmallButton
-          text="Go Back"
-          onClick={handleBack}
-          // sx={{
-          //   flex: "0",
-          //   width: "10%",
-          //   color: "grey",
-
-          //   background: "transparent",
-          //   boxShadow: "none",
-          //   marginTop: "20px",
-          //   "&:hover": {
-          //     bgcolor: "#eceff1",
-          //     color: "black ",
-          //   },
-          // }}
-        />
+        <SmallButton text="Go Back" onClick={handleBack} />
       </BackButtonContainer>
       <DoubleButtonContainer>
         <Button
