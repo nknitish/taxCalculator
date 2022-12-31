@@ -52,7 +52,7 @@ const HraCard = () => {
         />
 
         <InputCard
-          label={"40% of your Basic"}
+          label={`40% of your Basic (${income?.basic})`}
           readOnly
           value={getPartialHra(income?.basic)}
         />

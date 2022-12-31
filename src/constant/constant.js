@@ -42,3 +42,7 @@ export const investment_80C_List = [
   { label: "Enter Public PF ( PPF )", name: "ppf" },
   { label: "Other investment (VPF/Insurance)", name: "other" },
 ];
+
+export const other_Deduction = [
+  { label: "Enter Other Deduction", name: "otherDeduction" },
+];

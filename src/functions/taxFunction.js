@@ -56,7 +56,7 @@ export const calculateTax = (amt, isOldRegime = true) => {
 export const getSum = (data = {}) => {
   let sum = 0;
   Object.entries(data).map(([key, value]) => {
-    sum += value;
+    sum += value || 0;
   });
 
   return sum;
