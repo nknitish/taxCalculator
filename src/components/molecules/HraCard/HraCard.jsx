@@ -11,8 +11,8 @@ const HraCard = () => {
   const dispatch = useDispatch();
   const { income, annualRent, deduction } = useSelector((state) => state);
 
-  const getPartialHra = (hra = 0) => {
-    return (hra * 0.4).toFixed(0);
+  const getPartialHra = (basic = 0) => {
+    return (basic * 0.4).toFixed(0);
   };
 
   const handleRentChange = (e) => {
@@ -25,7 +25,7 @@ const HraCard = () => {
     let rent = (annualRent - 0.1 * income?.basic || 0).toFixed(0);
     let leastAmt = Math.min(
       income?.hra || 0,
-      getPartialHra(income?.hra),
+      getPartialHra(income?.basic),
       rent > 0 ? rent : 0
     );
 
@@ -52,9 +52,9 @@ const HraCard = () => {
         />
 
         <InputCard
-          label={"40% of your HRA"}
+          label={"40% of your Basic"}
           readOnly
-          value={getPartialHra(income?.hra)}
+          value={getPartialHra(income?.basic)}
         />
 
         <InputCard
