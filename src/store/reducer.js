@@ -17,7 +17,7 @@ const initialState = {
     //Deductions
     deduction80C: 0,
     standardDeduction: 50000,
-    otherDeduction: 0, //Not in use now
+    otherDeduction: "",
   },
 
   //80C

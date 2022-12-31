@@ -21,6 +21,10 @@ const OldRegime = () => {
         value={deduction?.standardDeduction}
       />
       <TableRow text="Rebate Under 80c" value={deduction?.deduction80C} />
+      <TableRow
+        text="Other Deduction"
+        value={deduction?.otherDeduction ? deduction?.otherDeduction : 0}
+      />
       <TableRow text="Taxable Income" value={getTaxableIncome()} />
       <TableRow
         text="Tax on Total Income"
